@@ -5,15 +5,30 @@
   <meta charset="utf-8">
   <script src="vendors/angular.min.js" charset="utf-8"></script>
   <script src="scripts/app.js" charset="utf-8"></script>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
   <title>Giphy Ang Routes</title>
 </head>
 
 <body ng-app='myApp'>
   <h1>Giphy Ang Routes</h1>
+
   <div ng-controller='HttpController as hc'>
+    <form ng-submit="hc.searchGif()">
+      <button ng-click='hc.searchGif()'>Search</button>
+      <input type="text" placeholder="Search Giphy" ng-model="hc.search" id="input">
+    </form>
     Get A Random gif
     <button ng-click='hc.randomGet()'>Random</button>
+    <div>
+
+      <img ng-src="{{hc.gifs.image_url}}" alt="">
+    </div>
+
+    <div ng-repeat="x in hc.returnSearch">
+
+      <img ng-src="{{x.images.downsized_medium.url}}" alt="">
+    </div>
 </body>
 
 </html>
