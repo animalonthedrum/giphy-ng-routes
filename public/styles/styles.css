@@ -1,8 +1,16 @@
 body {
-  text-align: center;
   font-family: 'Raleway', sans-serif;
 }
 
 h1 {
+  text-align: center;
   padding: 40px;
+}
+
+img {
+  height: 275px;
+}
+
+.input {
+  text-align: center;
 }
