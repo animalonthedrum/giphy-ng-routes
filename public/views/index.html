@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <script src="vendors/angular.min.js" charset="utf-8"></script>
   <script src="scripts/app.js" charset="utf-8"></script>
+  <script src="scripts/services/gif.service.js" charset="utf-8"></script>
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link rel="stylesheet" href="vendors/bootstrap.min.css">
   <link rel="stylesheet" href="styles/styles.css">
@@ -18,12 +19,12 @@
     <div class="input">
 
 
-      <form ng-submit="hc.searchGif()">
-        <button ng-click='hc.searchGif()'>Search</button>
+      <form ng-submit="hc.newSearch(hc.search)">
+        <button ng-click='hc.newSearch(hc.search)'>Search</button>
         <input type="text" placeholder="Search Giphy" ng-model="hc.search" id="input">
       </form>
       Get A Random gif
-      <button ng-click='hc.randomGet()'>Random</button>
+      <button ng-click='hc.newClick()'>Random</button>
       <div>
       </div>
       <div class="row">
@@ -32,7 +33,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4" ng-repeat="x in hc.returnSearch">
+        <div class="col-md-4" ng-repeat="x in hc.gifs">
 
           <img ng-src="{{x.images.downsized_medium.url}}" alt="">
         </div>
